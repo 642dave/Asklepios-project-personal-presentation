@@ -5,8 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block  %}{% endblock  %}</title>
     <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+    {% block styles %}{% endblock styles %}
 </head>
 <body>
     {% block content %}{% endblock content %}
