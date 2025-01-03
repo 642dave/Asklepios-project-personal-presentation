@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)),
+                url("images/shared/operating_room_background.jpg")center/cover no-repeat;
+    min-height: 100vh;
+}
+
