@@ -1,0 +1,20 @@
+/* Header */
+h1 {
+    color: red;
+}
+
+.header-navigation {
+    margin-left: 10px;
+}
+
+ul li {
+    float: left; 
+    font-size: 40px;   
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+

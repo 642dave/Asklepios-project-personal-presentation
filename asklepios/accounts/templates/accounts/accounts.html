@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}index{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'accounts/index.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    {{ block.super }}
+    <h1>Accounts</h1>
+    <header>
+        <nav class="header-navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Patients</a></li>
+                <li><a href="#">Medications</a></li>
+                <li><a href="#">Radiology</a></li>
+                <li><a href="#">Surgeries</a></li>
+                <li><a href="#">Diagnoses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+{% endblock content %}
