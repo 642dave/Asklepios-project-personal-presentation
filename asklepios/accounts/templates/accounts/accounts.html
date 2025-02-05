@@ -4,30 +4,46 @@
 {% block title %}index{% endblock title %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'accounts/index.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/accounts.css' %}">
 {% endblock styles %}
 
 {% block content %}
     {{ block.super }}
-    <h1>Accounts</h1>
+
     <header>
-        <nav class="header-navigation">
+        <nav class="navigation">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Patients</a></li>
-                <li><a href="#">Medications</a></li>
-                <li><a href="#">Radiology</a></li>
-                <li><a href="#">Surgeries</a></li>
-                <li><a href="#">Diagnoses</a></li>
+                <li><a href="{% url 'login:login'%}">Home</a></li>
+                <li><a href="{% url 'patients:patients'%}">Patients</a></li>
+                <li><a href="{% url 'medications:medications'%}">Medications</a></li>
+                <li><a href="{% url 'radiology:radiology'%}">Radiology</a></li>
+                <li><a href="{% url 'surgeries:surgeries'%}">Surgeries</a></li>
+                <li><a href="{% url 'diagnoses:diagnoses'%}">Diagnoses</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <div class="container-main-images">
+            <img src="{% static 'accounts/images/doctor_patient_bedside.jpg' %}" alt="Doctor patient">
+            <img src="{% static 'accounts/images/doctor_patient_conversation.jpg' %}" alt="Doctor patient">
+            <img src="{% static 'accounts/images/paramedic_loading_patient.jpg' %}" alt="Doctor patient">
+        </div>
 
+        <div class="contact-form">
+            <form action="">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+                <input type="tel" placeholder="phone">
+                <textarea placeholder="Ask anything:" rows="5" cols="33" id=""></textarea>
+                <input type="submit" value="send" >
+            </form>
+        </div>
     </main>
 
     <footer>
-
+        <p>© 2025 Medical systems</p>
+        <a href="{% url 'accounts:privacy_policy' %}">Privacy Policy</a>
     </footer>
+    
 {% endblock content %}

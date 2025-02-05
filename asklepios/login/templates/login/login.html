@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login page{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+    <header>
+       <h1>Asklepios</h1>
+    </header>
+
+    <main>
+         <img src="{% static 'login/images/login-logo.png' %}" alt="Medical logo" class="header-logo">
+
+        <div class="form-login">
+            <form action="">
+                <h2>For registered doctors only</h2>
+                <input type="email" placeholder="email">
+                <input type="password" placeholder="password">
+                <input type="submit" value="verify">
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+<footer>
+    <p>© 2025 Medical systems</p><a href="#">Privacy Policy</a>
+</footer>
+
+{% endblock content %}

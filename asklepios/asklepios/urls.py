@@ -4,10 +4,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('login.urls')),
-    path('accounts/', include('accounts.urls')),
-    path('patients/', include('patients.urls')),
-    path('medications/', include('medications.urls')),
-    path('radiology/', include('radiology.urls')),
-    path('surgeries/', include('surgeries.urls')),
-    path('diagnoses/', include('diagnoses.urls')),
+    path('', include('accounts.urls')),
+    path('', include('patients.urls')),
+    path('', include('medications.urls')),
+    path('', include('radiology.urls')),
+    path('', include('surgeries.urls')),
+    path('', include('diagnoses.urls')),
 ]

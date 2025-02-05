@@ -1,0 +1,95 @@
+/* global */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";    
+}
+
+header {
+    display: grid;
+    grid-area: header;
+}
+
+header h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 4rem;
+}
+
+main {
+    display: grid;
+    grid-area: main;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "logo"
+        "form";
+    justify-content: center;
+
+}
+
+main img {
+    display: grid;
+    grid-area: logo;
+    width: 80px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.form-login {
+    display: grid;
+    grid-area: form;
+    margin-top: 100px;
+}
+
+.form-login h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.form-login input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.form-login input:hover {
+    border: 1px solid rgb(206, 198, 198);
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    color: rgb(206, 198, 198);
+}
+
+.forgot-password a:hover {
+    color:#fff;
+}
+
+footer {
+    display: grid;
+    grid-area: footer;
+    justify-content: center;
+    background-color: rgba(197, 187, 187, 0.393);
+}
+
+footer p {
+    color: rgb(206, 198, 198);
+}
+
+footer a {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(6, 6, 240);
+    margin-bottom: 5px;
+}

@@ -1,20 +1,74 @@
-/* Header */
-h1 {
-    color: red;
+body {
+    display: grid;
+    grid-template-rows: 1fr auto auto 60px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "navigation"
+        "content"
+        "form"
+        "footer";
+    height: 100vh;
 }
 
-.header-navigation {
-    margin-left: 10px;
+/* Navigation */
+.navigation {
+    grid-area: navigation;
+    background: rgba(7, 7, 232, 0.463);
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
-ul li {
-    float: left; 
-    font-size: 40px;   
+.navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
 }
 
-ul li a {
+.navigation ul li {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 15px;
     text-decoration: none;
-    color: #fff;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navigation ul li a:hover {
+    border-bottom: 2px solid white;
 }
 
 
+.container-main-images {
+    grid-area: content;
+}
+
+.contact-form {
+    grid-area: form;
+}
+
+footer {
+    grid-area: footer;
+    background: rgba(130, 128, 128, 0.717);
+    text-align: center;
+    display: grid;
+    place-items: center;/* Zajistí vertikální i horizontální zarovnání */
+    height: 60px;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: blue;
+}
