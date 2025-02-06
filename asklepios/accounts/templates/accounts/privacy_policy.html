@@ -8,18 +8,70 @@
 {% endblock styles %}
 
 {% block content %}
-     <div class="privacy-container">
-        <div class="privacy-box">
-            <h2>Privacy Policy</h2>
-            <p><strong>Effective Date:</strong> February 2025</p>
-            <ul>
-                <li><strong>Introduction</strong> – This Privacy Policy explains how ASKLEPIOS handles and protects your information when using our demo medical system.</li>
-                <li><strong>Information We Collect</strong> – This is a demo application, so no real data is collected or processed.</li>
-                <li><strong>Use of Data</strong> – All entered data is fictional and used only for testing.</li>
-                <li><strong>Data Security</strong> – Basic security measures are in place, but this system is not meant for real medical purposes.</li>
-                <li><strong>Changes to This Policy</strong> – We may update this Privacy Policy, and changes will be reflected on this page.</li>
-                <li><strong>Contact Us</strong> – If you have any questions, contact us at [your email or placeholder].</li>
-            </ul>
-        </div>
+    <div class="privacy-container">
+    <div class="privacy-box">
+        <h2>Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> February 2025</p>
+        
+        <h3>1. Introduction</h3>
+        <p>
+            Welcome to the ASKLEPIOS demo medical system. This Privacy Policy explains how we handle and protect 
+            any information used within this application. Please note that this is a **demonstration system** and 
+            is **not intended for real medical use**.
+        </p>
+
+        <h3>2. Information We Collect</h3>
+        <p>
+            Since ASKLEPIOS is a demo application, **no real user data is collected, stored, or processed**.
+            Any information entered into the system is entirely fictional and used solely for testing and 
+            demonstration purposes.
+        </p>
+
+        <h3>3. Use of Data</h3>
+        <p>
+            The data entered into ASKLEPIOS is only used to showcase the system’s functionality. This means:
+        </p>
+        <ul>
+            <li>All entered data is temporary and non-persistent.</li>
+            <li>There is no real user authentication or identity verification.</li>
+            <li>No actual medical records are stored or processed.</li>
+        </ul>
+
+        <h3>4. Data Security</h3>
+        <p>
+            While basic security measures are implemented to protect the application, ASKLEPIOS is **not a production system** 
+            and should not be used for handling sensitive or real-world medical data.
+        </p>
+        <p>Security measures include:</p>
+        <ul>
+            <li>Basic encryption of stored demo data.</li>
+            <li>Limited access control within the demo environment.</li>
+            <li>No external data sharing or third-party integrations.</li>
+        </ul>
+
+        <h3>5. Limitations of This System</h3>
+        <p>
+            This system is designed **only for demonstration purposes**. As such, it **should not be relied upon for any real medical decision-making**. 
+            By using this system, you acknowledge that it is strictly for educational and presentation use.
+        </p>
+
+        <h3>6. Changes to This Policy</h3>
+        <p>
+            We may update this Privacy Policy from time to time. Any modifications will be reflected on this page. 
+            Since this is a demo application, updates will not affect any real-world data, as none is stored.
+        </p>
+
+        <h3>7. Contact Us</h3>
+        <p>
+            If you have any questions regarding this Privacy Policy or the ASKLEPIOS demo system, feel free to contact us at:
+            <br>
+            <strong>[Your email or placeholder]</strong>
+        </p>
+
+        <button id="button-back-to-accounts" onclick="window.location.href='{% url 'accounts:accounts' %}'">
+            Back to accounts
+        </button>   
     </div>
+</div>
+
 {% endblock content %}
