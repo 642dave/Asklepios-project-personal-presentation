@@ -1,2 +1,11 @@
 venv/
 __pycache__/
+*.pyc
+*.pyo
+db.sqlite3          
+*.log        
+staticfiles/     
+media/     
+.vscode/
+.idea/
+*.sublime-workspace
