@@ -25,9 +25,13 @@ header {
 
 .navigation {
     width: 100%;
-    background: rgba(0, 0, 255, 0.711);
-    padding: 30px 0;
+    background: rgba(0, 0, 255, 0.9); /* Lepší kontrast */
+    padding: 15px 0;
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Aby bylo nad obsahem */
 }
 
 /* Seznam navigačních položek */
@@ -36,6 +40,13 @@ header {
     justify-content: space-evenly;
     width: 100%;
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Odkazy v navigaci */
+.navigation ul li {
+    padding: 10px 15px;
 }
 
 /* Odkazy v navigaci */
@@ -44,6 +55,18 @@ header {
     color: white;
     font-size: 18px;
     font-weight: bold;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    color: white !important;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1001;
 }
 
 /* Obrázky - levý sloupec */
@@ -136,10 +159,144 @@ footer {
 
 footer p {
     color: white;
-    margin: 0;
 }
 
 footer a {
     text-decoration: none;
     color: blue;
+    margin-left: 10px;
 }
+
+/* Media queries */
+@media (max-width: 1200px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "navigation navigation"
+            "images content"
+            "form form"
+            "footer footer";
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "navigation"
+            "images"
+            "content"
+            "form"
+            "footer";
+    }
+
+        .container-main-images {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .container-main-images img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .main-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container-main-images img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "navigation"
+            "images"
+            "content"
+            "form"
+            "footer";
+        gap: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 255, 0.9);
+        text-align: center;
+        padding: 0;
+        z-index: 999;
+    }
+
+    .navigation ul.show {
+        display: flex; /* Zobrazí menu po kliknutí */
+    }
+
+    .navigation ul li {
+        padding: 15px 0;
+    }
+
+    form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .contact-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+.contact-form form {
+    width: 50%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    }
+
+/* Formulářová pole */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    }
+
+/* Tlačítko formuláře */
+.contact-form input[type="submit"] {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    }
+}
+
+
+
+

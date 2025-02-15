@@ -4,14 +4,34 @@
 {% block title %}index{% endblock title %}
 
 {% block styles %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'accounts/accounts.css' %}">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle"); // Tlačítko hamburgeru
+            const navLinks = document.getElementById("nav-links"); // Navigační seznam
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener("click", function () {
+                    navLinks.classList.toggle("show"); // Přepínání třídy pro zobrazení/skrytí
+                });
+            } else {
+                console.error("Hamburger menu nebo navigace nebyla nalezena!");
+            }
+        });
+    </script>
+
+
 {% endblock styles %}
 
 {% block content %}
     {{ block.super }}
     <header>
         <nav class="navigation">
-            <ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{% url 'login:login'%}">Home</a></li>
                 <li><a href="{% url 'patients:patients'%}">Patients</a></li>
                 <li><a href="{% url 'medications:medications'%}">Medications</a></li>
