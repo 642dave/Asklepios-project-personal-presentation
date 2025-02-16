@@ -15,7 +15,7 @@ class Patient(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, verbose_name='Gender')
 
     personal_id = models.CharField(
-        max_length=20,
+        max_length=30,
         unique=True,
         verbose_name='Personal ID',
         validators=[RegexValidator(r'^\d{9,12}$', 'Personal ID must be 9-12 digits')]
@@ -23,7 +23,7 @@ class Patient(models.Model):
     
 
     address = models.TextField(verbose_name='Address')
-    phone = models.CharField(max_length=15, unique=True, verbose_name='Phone Number')
+    phone = models.CharField(max_length=30, unique=True, verbose_name='Phone Number')
     email = models.EmailField(unique=True, verbose_name='Email')
     registered_at = models.DateTimeField(auto_now_add=True, verbose_name='Registered At')
 
