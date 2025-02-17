@@ -5,9 +5,64 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'patients/patients.css' %}">
+    <script defer src="{% static 'patients/script.js' %}"></script>
 {% endblock styles %}
 
 {% block content %}
     {{ block.super }}
-    <h1>Patients</h1>
+
+    <!-- Navigation -->
+    <header>
+        <h1>Patient Management System</h1>
+        <button id="add-patient-btn">➕ Add Patient</button>
+    </header>
+
+    <!-- Patient searching -->
+    <section id="search-section">
+        <input type="text" id="search-input" placeholder="Search patient...">
+        <button id="search-btn">🔍 Search</button>
+    </section>
+
+    <!-- Patients table -->
+     <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+        </table>
+     </section>
+
+    <!-- Adding patients form -->
+    <div id="patient-form-container">
+        <form id="patient-form">
+            <h2>Add/Edit Patient</h2>
+            <label>First Name:</label>
+            <input type="text" id="first-name required">
+
+            <label>Last Name:</label>
+            <input type="text" id="last-name" required>
+
+            <label>Email:</label>
+            <input type="email" id="email" required>
+
+            <label>Phone:</label>
+            <input type="text" id="phone" required>
+
+            <button type="submit">✅ Save</button>
+            <button type="button" id="close-form">❌ Cancel</button>
+
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 Medical systems</p>
+        <a href="{% url 'accounts:privacy_policy' %}">Privacy Policy</a>
+    </footer>
+
 {% endblock content %}
