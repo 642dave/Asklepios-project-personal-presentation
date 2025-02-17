@@ -101,6 +101,13 @@ th {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+#patient-form-container.show {
+    display: grid;
+    opacity: 1;
 }
 
 #patient-form-container label {

@@ -5,7 +5,7 @@
 
 {% block styles %}
     <link rel="stylesheet" href="{% static 'patients/patients.css' %}">
-    <script defer src="{% static 'patients/script.js' %}"></script>
+    <script defer src="{% static 'patients/patients.js' %}?v={{ STATIC_VERSION }}"></script>
 {% endblock styles %}
 
 {% block content %}
