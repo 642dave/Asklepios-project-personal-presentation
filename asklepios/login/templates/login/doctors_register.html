@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}Doctors_register{% endblock title %}doctors_register
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'login/doctors_register.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    <header>
+        <h1>Asklepios</h1>
+    </header>
+
+    <main>
+        <div class="form-register">
+            <form action="{% url 'login:doctors_register' %}" method="POST">
+                {% csrf_token %}
+                <h2>Doctor Registration</h2>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+
+                <label for="license_number">Medical License Number:</label>
+                <input type="text" id="license_number" name="license_number" required>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+{% endblock content %}

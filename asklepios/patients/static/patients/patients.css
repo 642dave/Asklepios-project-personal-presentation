@@ -1,13 +1,47 @@
 * {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
     padding: 5px;
     display: grid;
-    grid-template-rows: auto auto 1fr auto; /* Header, Search, Content, Footer*/
+    grid-template-rows: auto auto auto 1fr auto; /* Header, Search, Content, Footer*/
     min-height: 100vh;
     gap: 20px;
+}
+
+.navigation {
+    width: 100%;
+    background: rgba(0, 0, 255, 0.9); /* Lepší kontrast */
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Aby bylo nad obsahem */
+}
+
+/* Seznam navigačních položek */
+.navigation ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Odkazy v navigaci */
+.navigation ul li {
+    padding: 10px 15px;
+}
+
+/* Odkazy v navigaci */
+.navigation ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* Navigation */
@@ -15,7 +49,6 @@ header {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    background: rgba(0, 0, 255, 0.9);
     color: white;
     padding: 15px;
     border-radius: 8px;
@@ -23,6 +56,7 @@ header {
 
 header h1 {
     text-align: center;
+    margin-top: 10px;
 }
 
 #add-patient-btn {

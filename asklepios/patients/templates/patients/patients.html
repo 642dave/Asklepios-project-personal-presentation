@@ -10,6 +10,22 @@
 
 {% block content %}
     {{ block.super }}
+    <!-- Main navigation -->
+     <header>
+        <nav class="navigation">
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="{% url 'login:login'%}">Home</a></li>
+                <li><a href="{% url 'patients:patients'%}">Patients</a></li>
+                <li><a href="{% url 'medications:medications'%}">Medications</a></li>
+                <li><a href="{% url 'radiology:radiology'%}">Radiology</a></li>
+                <li><a href="{% url 'surgeries:surgeries'%}">Surgeries</a></li>
+                <li><a href="{% url 'diagnoses:diagnoses'%}">Diagnoses</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Navigation -->
     <header>

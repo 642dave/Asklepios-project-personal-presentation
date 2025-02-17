@@ -3,11 +3,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('login.urls')),
-    path('', include('accounts.urls')),
-    path('', include('patients.urls')),
-    path('', include('medications.urls')),
-    path('', include('radiology.urls')),
-    path('', include('surgeries.urls')),
-    path('', include('diagnoses.urls')),
+    path('', include('login.urls', namespace='login')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('patients/', include('patients.urls', namespace='patients')),
+    path('medications/', include('medications.urls', namespace='medications')),
+    path('radiology/', include('radiology.urls', namespace='radiology')),
+    path('surgeries/', include('surgeries.urls', namespace='surgeries')),
+    path('diagnoses/', include('diagnoses.urls', namespace='diagnoses')),
 ]
