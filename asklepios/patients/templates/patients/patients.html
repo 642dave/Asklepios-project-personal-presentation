@@ -18,7 +18,7 @@
             </div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="{% url 'login:login'%}">Home</a></li>
-                <li><a href="{% url 'patients:patients'%}">Patients</a></li>
+                <li><a href="{% url 'patients:patients_list'%}">Patients</a></li>
                 <li><a href="{% url 'medications:medications'%}">Medications</a></li>
                 <li><a href="{% url 'radiology:radiology'%}">Radiology</a></li>
                 <li><a href="{% url 'surgeries:surgeries'%}">Surgeries</a></li>
@@ -35,8 +35,10 @@
 
     <!-- Patient searching -->
     <section id="search-section">
-        <input type="text" id="search-input" placeholder="Search patient...">
-        <button id="search-btn">🔍 Search</button>
+        <form method="GET" action="{% url 'patients:patients_list' %}">
+            <input type="text" name="q" id="search-input" placeholder="Search patient..." value="{{ query }}">
+            <button type="submit">🔍 Search</button>
+        </form>
     </section>
 
     <!-- Patients table -->
@@ -51,24 +53,47 @@
                     <th>Actions</th>
                 </tr>
             </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.id }}</td>
+                    <td>{{ patient.first_name }} {{ patient.last_name }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>{{ patient.phone }}</td>
+                    <td>
+                        <a href="#">✏️ Edit</a> |
+                        <a href="#">❌ Delete</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No patients found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
      </section>
 
     <!-- Adding patients form -->
     <div id="patient-form-container">
-        <form id="patient-form">
+        <form id="patient-form" method="POST" action="{% url 'patients:patients_list' %}">
+            {% csrf_token %}
             <h2>Add/Edit Patient</h2>
+
             <label>First Name:</label>
-            <input type="text" id="first-name required">
+            <input type="text" name="first_name" required>
 
             <label>Last Name:</label>
-            <input type="text" id="last-name" required>
+            <input type="text" name="last_name" required>
+
+            <label>Birth Date:</label>
+            <input type="date" name="birth_date" required>  
 
             <label>Email:</label>
-            <input type="email" id="email" required>
+            <input type="email" name="email" required>
 
             <label>Phone:</label>
-            <input type="text" id="phone" required>
+            <input type="text" name="phone" required>
 
             <button type="submit">✅ Save</button>
             <button type="button" id="close-form">❌ Cancel</button>

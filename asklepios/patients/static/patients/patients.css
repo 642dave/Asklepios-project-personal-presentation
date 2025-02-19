@@ -108,12 +108,17 @@ header h1 {
 table {
     width: 100%;
     border-collapse: collapse;
+    color: white;
 }
 
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 th {
