@@ -14,11 +14,11 @@ class Patient(models.Model):
     birth_date = models.DateField(verbose_name='Date of birth')
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, verbose_name='Gender')
 
-    personal_id = models.CharField(
+    birth_number = models.CharField(
         max_length=30,
         unique=True,
-        verbose_name='Personal ID',
-        validators=[RegexValidator(r'^\d{9,12}$', 'Personal ID must be 9-12 digits')]
+        verbose_name='Birth Number',
+        validators=[RegexValidator(r'^\d{9,12}$', 'Personal ID must be 9-12 digits')],
     )
     
 
