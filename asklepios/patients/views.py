@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponseNotAllowed
 from .models import Patient
 
 # Create your views here.
@@ -54,5 +55,11 @@ def patients_list(request):
         'query': query,
     })
 
+def delete_patient(request, patient_id):
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])  # Pokud není POST, vrátíme chybu 405
 
+    patient = get_object_or_404(Patient, id=patient_id)  # Najde pacienta nebo vrátí 404
+    patient.delete()  # Smaže pacienta
+    return redirect('patients:patients_list')  # Přesměrování na seznam pacientů
     
