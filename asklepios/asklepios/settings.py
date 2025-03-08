@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'login',
     'accounts',
     'patients',
+    'medical_records',
     'medications',
     'radiology',
     'surgeries',
