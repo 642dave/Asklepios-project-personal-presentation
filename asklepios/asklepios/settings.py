@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'login.Doctor'
+AUTHENTICATION_BACKENDS = [
+    'login.backends.DoctorAuthBackend',  # My custom backend
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 # Application definition
 
