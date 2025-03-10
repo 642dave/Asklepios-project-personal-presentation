@@ -44,4 +44,15 @@
     <p>© 2025 Medical systems</p><a href="#">Privacy Policy</a>
 </footer>
 
+<script>
+        async function getCsrfToken() {
+            const response = await fetch("{% url 'login:login' %}", {
+                method: 'GET',
+                credentials: 'same-origin'
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', getCsrfToken);
+    </script>
+
 {% endblock content %}

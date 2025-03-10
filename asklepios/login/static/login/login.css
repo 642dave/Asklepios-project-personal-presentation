@@ -52,6 +52,10 @@ main img {
     margin-bottom: 5px;
 }
 
+.messages p {
+    color: rgb(251, 5, 5);
+}
+
 .form-login input {
     display: block;
     width: 100%;
