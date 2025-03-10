@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
+from django.contrib import messages
 from .models import Doctor 
 
 # Create your views here.
 def login(request):
-    error = None
-    
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -15,9 +14,11 @@ def login(request):
             auth_login(request, doctor)
             return redirect('patients:patients_list')  # Redirection after successful login
         else:
-            error = 'Invalid email or password'
+            messages.error(request, 'Invalid email or password')  # Použijeme messages pro výpis chyb
+        
+        return redirect('login:login')  # Přesměrování pro nový CSRF token
 
-    return render(request, 'login/login.html', {'error': error})
+    return render(request, 'login/login.html')
 
 def doctors_register(request):
     return render(request, 'login/doctors_register.html')

@@ -22,8 +22,12 @@
                 <h2>For registered doctors only</h2>
                 
                 <!-- Error message display -->
-                {% if error %}
-                    <p class="error">{{ error }}</p>
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
                 {% endif %}
 
                 <input type="email" name="email" placeholder="email">
