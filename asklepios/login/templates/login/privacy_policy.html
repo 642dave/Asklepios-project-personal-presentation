@@ -4,7 +4,7 @@
 {% block title %}privacy policy{% endblock title %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'accounts/privacy_policy.css' %}">
+    <link rel="stylesheet" href="{% static 'login/privacy_policy.css' %}">
 {% endblock styles %}
 
 {% block content %}
@@ -65,11 +65,11 @@
         <p>
             If you have any questions regarding this Privacy Policy or the ASKLEPIOS demo system, feel free to contact us at:
             <br>
-            <strong>[Your email or placeholder]</strong>
+            <strong>[medical.systems@medical.com]</strong>
         </p>
 
-        <button id="button-back-to-accounts" onclick="window.location.href='{% url 'accounts:accounts' %}'">
-            Back to accounts
+        <button id="button-back-to-login" onclick="window.location.href='{% url 'login:login' %}'">
+            Back to login
         </button>   
     </div>
 </div>

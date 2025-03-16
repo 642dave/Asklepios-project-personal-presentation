@@ -1,4 +1,4 @@
-thml, body {
+html, body {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@ h2 {
 }
 
 /* Privacy policy button */
-#button-back-to-accounts {
+#button-back-to-login {
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.2);
     color: white;
@@ -59,7 +59,7 @@ h2 {
     transition: all 0.3s ease;
 }
 
-#button-back-to-accounts:hover {
+#button-back-to-login:hover {
     background: rgba(255, 255, 255, 0.4);
     color: black;
 }

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib import messages
-from .models import Doctor 
 
 # Create your views here.
 def login(request):
@@ -22,3 +21,6 @@ def login(request):
 
 def doctors_register(request):
     return render(request, 'login/doctors_register.html')
+
+def privacy_policy(request):
+    return render(request, 'login/privacy_policy.html')
