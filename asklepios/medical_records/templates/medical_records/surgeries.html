@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}surgeries{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'medical_records/surgeries.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    {{ block.super }}
+    <h1>Surgeries</h1>
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login page{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+{% endblock styles %}
+
+{% block content %}
+
+    <header>
+       <h1>Asklepios</h1>
+    </header>
+
+    <main>
+        <img src="{% static 'login/images/login-logo.png' %}" alt="Medical logo" class="header-logo">
+
+        <div class="form-login">
+            <form  method="POST" action="{% url 'login:login' %}">
+            {% csrf_token %}
+                <h2>For registered doctors only</h2>
+                
+                <!-- Error message display -->
+                {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <input type="email" name="email" placeholder="email">
+                <input type="password" name="password" placeholder="password">
+                <input type="submit" value="verify">
+                <div class="forgot-password">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+<footer>
+    <p>© 2025 Medical systems</p><a href="{% url 'login:privacy-policy' %}">Privacy Policy</a>
+</footer>
+
+<script>
+     async function getCsrfToken() {
+        const response = await fetch("{% url 'login:login' %}", {
+                method: 'GET',
+                credentials: 'same-origin'
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', getCsrfToken);
+</script>
+
+{% endblock content %}
